@@ -1,12 +1,19 @@
 <script>
   import Accordion from '$lib/Accordion.svelte';
   import BetterAccordion from '$lib/BetterAccordion.svelte';
+  import SearchFilter from '$lib/SearchFilter.svelte';
   import Toggle from '$lib/Toggle.svelte';
 
   let isToggled = false;
+
+  let search = '';
+  let items = ['Samson', 'scott', 'wes', 'landon', 'courtney', 'lucie', 'brooklyn'];
 </script>
 
 <h1>Components</h1>
+
+<h2>SearchFilter component {search}</h2>
+<SearchFilter {items} bind:search />
 
 <h2>Accordion (mounting/unmounting with animating height auto using svelte slide transition)</h2>
 <Accordion isOpen={false} buttonText="Toggle Accordion?">
