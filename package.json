@@ -13,6 +13,7 @@
   "devDependencies": {
     "@sveltejs/adapter-netlify": "^1.0.0-next.27",
     "@sveltejs/kit": "next",
+    "@types/marked": "^2.0.4",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
     "eslint": "^7.22.0",
@@ -26,5 +27,8 @@
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "marked": "^2.1.3"
+  }
 }

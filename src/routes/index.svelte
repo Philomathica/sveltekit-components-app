@@ -1,16 +1,26 @@
 <script>
   import Accordion from '$lib/Accordion.svelte';
   import BetterAccordion from '$lib/BetterAccordion.svelte';
+  import Field from '$lib/Field.svelte';
+  import Markdown from '$lib/Markdown.svelte';
   import SearchFilter from '$lib/SearchFilter.svelte';
   import Toggle from '$lib/Toggle.svelte';
 
+  let text = '# Hello';
   let isToggled = false;
-
   let search = '';
+  let fieldValue = '';
   let items = ['Samson', 'scott', 'wes', 'landon', 'courtney', 'lucie', 'brooklyn'];
 </script>
 
 <h1>Components</h1>
+
+<h2>Markdown</h2>
+<Markdown bind:text />
+
+<h2>Field {fieldValue}</h2>
+<Field bind:value={fieldValue} label="Search" instructions="Type to search" placeholder="Joe" />
+<Field value={0} label="Number" type="number" />
 
 <h2>SearchFilter component {search}</h2>
 <SearchFilter {items} bind:search />
