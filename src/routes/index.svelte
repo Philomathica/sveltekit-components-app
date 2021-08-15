@@ -1,11 +1,13 @@
 <script>
-  import Accordion from '$lib/Accordion.svelte';
-  import BetterAccordion from '$lib/BetterAccordion.svelte';
-  import Field from '$lib/Field.svelte';
-  import Markdown from '$lib/Markdown.svelte';
-  import SearchFilter from '$lib/SearchFilter.svelte';
-  import Toggle from '$lib/Toggle.svelte';
+  import Accordion from '$lib/components/Accordion.svelte';
+  import BetterAccordion from '$lib/components/BetterAccordion.svelte';
+  import Field from '$lib/components/Field.svelte';
+  import Markdown from '$lib/components/Markdown.svelte';
+  import Modal from '$lib/components/Modal.svelte';
+  import SearchFilter from '$lib/components/SearchFilter.svelte';
+  import Toggle from '$lib/components/Toggle.svelte';
 
+  let isModalOpen = false;
   let text = '# Hello';
   let isToggled = false;
   let search = '';
@@ -14,6 +16,15 @@
 </script>
 
 <h1>Components</h1>
+
+<h2>Modal with Portal (using action)</h2>
+<Modal bind:isModalOpen>
+  <div style="background: white; box-shadow: 1px 1px 3px black; padding: 20px;">
+    <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Joe" />
+    <Field value={0} label="Number" type="number" />
+  </div>
+</Modal>
+<button on:click={() => (isModalOpen = true)}>Open Modal Form</button>
 
 <h2>Markdown</h2>
 <Markdown bind:text />
