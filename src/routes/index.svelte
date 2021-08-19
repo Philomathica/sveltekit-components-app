@@ -21,8 +21,10 @@
 <h1>Components</h1>
 
 <h2>Toast</h2>
-<Toast duration={3000} />
-<button on:click={() => toast.send('NEW MESSAGE!' + Math.random())}>New Toast</button>
+<Toast />
+<button on:click={() => toast.send('NEW MESSAGE!')}>New Toast</button>
+<button on:click={() => toast.send('NEW MESSAGE!', { duration: 3000 })}>3000 Duration</button>
+<button on:click={() => toast.send('Error MESSAGE!', { duration: 5000, type: 'ERROR' })}>Error Message</button>
 
 <h2>Modal with Portal (using action)</h2>
 <Toggle bind:isToggled={modalBackground} label="Modal Background" />
