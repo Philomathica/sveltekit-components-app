@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { slide } from '../actions/Slide';
+  import { slide } from '../actions/slide';
+
   export let buttonText = '';
   export let isOpen = true;
 </script>
@@ -22,8 +23,7 @@
 
   button {
     display: block;
-    border: 0;
-    width: 100%;
+    width: 400px;
     text-align: left;
     border: solid 1px #333;
     margin: 0;
@@ -43,5 +43,6 @@
   .accordion-content {
     border: solid 1px #333;
     border-top: 0;
+    width: 400px;
   }
 </style>

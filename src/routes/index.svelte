@@ -6,8 +6,11 @@
   import Modal from '$lib/components/Modal.svelte';
   import SearchFilter from '$lib/components/SearchFilter.svelte';
   import Toggle from '$lib/components/Toggle.svelte';
+  import Toast from '$lib/components/Toast.svelte';
+  import { toast } from '$lib/stores/toast';
 
   let isModalOpen = false;
+  let modalBackground = false;
   let text = '# Hello';
   let isToggled = false;
   let search = '';
@@ -17,8 +20,13 @@
 
 <h1>Components</h1>
 
+<h2>Toast</h2>
+<Toast duration={3000} />
+<button on:click={() => toast.send('NEW MESSAGE!' + Math.random())}>New Toast</button>
+
 <h2>Modal with Portal (using action)</h2>
-<Modal bind:isModalOpen>
+<Toggle bind:isToggled={modalBackground} label="Modal Background" />
+<Modal bind:isModalOpen background={modalBackground}>
   <div style="background: white; box-shadow: 1px 1px 3px black; padding: 20px;">
     <Field bind:value={search} label="Search" instructions="Type to search" placeholder="Joe" />
     <Field value={0} label="Number" type="number" />

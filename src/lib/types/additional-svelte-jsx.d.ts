@@ -3,5 +3,6 @@
 declare namespace svelte.JSX {
   interface HTMLAttributes<T> {
     onanimationdone?: (event: CustomEvent) => void;
+    onclickoutside?: (event: CustomEvent) => void;
   }
 }
